@@ -1,3 +1,4 @@
+import React from 'react'
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import Index from './components/Index/Index'
 import Home from './components/Index/Home'
@@ -9,8 +10,12 @@ import Weather from './components/WeatherDetails/Weather'
 import Login from './components/Login/Login'
 import Chat from './components/Chat/Chat'
 import Profile from './components/Profile/Profile'
+import { Context } from './components/AppContext/AppContext'
 function App() {
-
+  const {initFirebase} = React.useContext(Context)
+  React.useEffect(() => {
+    initFirebase()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
