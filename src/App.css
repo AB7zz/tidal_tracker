@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Weatherbox {
+    border: 1.5px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+    padding-top: 40px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    
+    background: #0cebeb;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+.mapBox {
+    border: 1.5px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+    padding-top: 40px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+    background-image: url('https://www.navionics.com/media/contentmanager/content/STANDARD_A_800x560_NC-30-years.jpg');
+    background-size: cover; 
+    
+}
+
+
+  .weather-card img {
+    margin-left: 200px;
+    
+  }
+
+  .weatherDetails {
+    margin-top: -110px;
+    color: brown;
+    
+  }
+
+  .location {
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+  }
+  .date {
+    font-size: large;
+    font-weight: bold;
+    color: white;
+  }
+
+
+.mdetails {
+    color: black;
+    font-size: small;
+} 

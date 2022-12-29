@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,13 +10,14 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import wallpaper from './wallpaper.jpg'
 import logo from './logo.png'
 import face from './face.jpg'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const TopNav = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+function Home(){
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -33,8 +34,10 @@ const TopNav = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   return (
-    <AppBar position="static">
+    <>
+      <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -89,7 +92,8 @@ const TopNav = () => {
           </Toolbar>
         </Container>
       </AppBar>
-  )
+      <img src={wallpaper} alt="wallpaper" />
+    </>
+  );
 }
-
-export default TopNav
+export default Home
