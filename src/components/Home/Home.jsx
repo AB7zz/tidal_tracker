@@ -11,8 +11,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import wallpaper from './wallpaper.jpg'
+import bgimage from './bg-image.png'
 import logo from './logo.png'
 import face from './face.jpg'
+import WeatherCard from '../WeatherCard/WeatherCard';
+import LocationBox from '../LocationBox/Locationbox';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -40,24 +43,22 @@ function Home(){
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
+             <Typography
               variant="h5"
-              noWrap
+              
               component="a"
               href=""
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
-                fontFamily: 'monospace',
+                fontFamily: 'system-ui',
                 fontWeight: 700,
-                letterSpacing: '.3rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              Tidal Tracker
             </Typography>
 
             <Box sx={{ flexGrow: 0 }}>
@@ -90,9 +91,15 @@ function Home(){
               </Menu>
             </Box>
           </Toolbar>
+
         </Container>
       </AppBar>
-      <img src={wallpaper} alt="wallpaper" />
+      {/* <img src={bgimage} alt="wallpaper" /> */}
+      
+      <div className="Weatherbox">
+      <WeatherCard temperature={72} description="Sunny Day" icon="03d" location="Thotappally" date="29/12/2022" wind="3 km/h" precipitation="13%" humidity="60%" predicted="37-40 C Safe to Go"/>
+      </div>
+      <LocationBox></LocationBox>
     </>
   );
 }
