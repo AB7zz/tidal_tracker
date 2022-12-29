@@ -8,7 +8,7 @@ import BottomNav from './components/BottomNav/BottomNav'
 import Weather from './components/WeatherDetails/Weather'
 import Login from './components/Login/Login'
 import Chat from './components/Chat/Chat'
-
+import Profile from './components/Profile/Profile'
 function App() {
 
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path='/weatherDetails' element={<Weather/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/chat' element={<Chat/>} />
+        <Route path='/profile' element={<Profile/>} />
       </Routes>
       <BottomNav/>
     </BrowserRouter>
