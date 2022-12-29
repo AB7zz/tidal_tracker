@@ -38,7 +38,7 @@ function LocationBox() {
           href={`/map?lat=${latitude}&lng=${longitude}`}
           className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-800"
         >
-          View map
+          Start Journey
         </a>
       </div>
     </div>

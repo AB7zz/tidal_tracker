@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from './logo.png'
 import face from './face.jpg'
+import { Link } from 'react-router-dom';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -37,7 +38,8 @@ const TopNav = () => {
     <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+            <Link sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} to='/home'><img style={{width: '50px'}} src={logo} alt='logo' /> </Link>
             <Typography
               variant="h5"
               noWrap
@@ -54,7 +56,7 @@ const TopNav = () => {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              Tidal Tracker
             </Typography>
 
             <Box sx={{ flexGrow: 0 }}>
