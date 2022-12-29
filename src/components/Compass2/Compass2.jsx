@@ -81,7 +81,7 @@ return (
     <br></br>
     <div className="compassed">
     <div className="compass-arrow" style={{ transform: `rotate(${bearing}deg)` }} />
-    <div className="compass-label">{direction}</div>
+    {/* <div className="compass-label">{direction}</div> */}
     </div>
   </div>
 
