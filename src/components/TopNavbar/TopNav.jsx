@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,14 +10,13 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import wallpaper from './wallpaper.png'
 import logo from './logo.png'
 import face from './face.jpg'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Preloader(){
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+const TopNav = () => {
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -34,10 +33,8 @@ function Preloader(){
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
   return (
-    <>
-      <AppBar position="static">
+    <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -92,8 +89,7 @@ function Preloader(){
           </Toolbar>
         </Container>
       </AppBar>
-      <img className='h-auto' src={wallpaper} alt="wallpaper" />
-    </>
-  );
+  )
 }
-export default Preloader
+
+export default TopNav
