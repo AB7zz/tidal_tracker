@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .Weatherbox {
     border: 1.5px solid #ccc;
     border-radius: 15px;
@@ -56,3 +57,39 @@ background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+
     color: black;
     font-size: small;
 } 
+
+.compassed {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+    background-image: url('http://i.imgur.com/44nyA.jpg');
+    text-align: center;
+  }
+  
+  .compass-arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 60px solid red;
+    transform-origin: 50% 50%;
+    position: absolute;
+	left: 50%; top: 50%;
+	margin-left: -5px; margin-top: -5px;
+  }
+  
+  .compass-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .compassDirections {
+    text-align: center;
+  }
+  

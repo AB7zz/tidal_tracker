@@ -6,7 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import SailingIcon from '@mui/icons-material/Sailing';
 import RadarIcon from '@mui/icons-material/Radar';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
-
+import ExploreIcon from '@mui/icons-material/Explore';
 import { Link } from 'react-router-dom';
 
 export default function BottomNav() {
@@ -41,9 +41,9 @@ export default function BottomNav() {
             </Link>
             <Link to='page4'>
                 <BottomNavigationAction
-                    label="AR"
-                    value="ar"
-                    icon={<ViewInArIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                    label="Compass"
+                    value="compass"
+                    icon={<ExploreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
         </BottomNavigation>

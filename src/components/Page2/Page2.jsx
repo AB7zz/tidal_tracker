@@ -1,8 +1,13 @@
 import React from 'react'
+import Compass from '../Compass/Compass'
 
 const Page2 = () => {
   return (
-    <div>Page2</div>
+    <div>
+     <Compass>
+     
+     </Compass>
+    </div>
   )
 }
 

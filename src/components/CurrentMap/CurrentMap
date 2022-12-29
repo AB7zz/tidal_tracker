@@ -1,0 +1,42 @@
+import React, { useState, useEffect } from 'react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+
+const CurrentMap = (props) => {
+  const [currentLocation, setCurrentLocation] = useState(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => setCurrentLocation(position),
+      (error) => console.log(error)
+    );
+  }, []);
+
+  return (
+    <div className="w-full h-64 bg-white rounded-lg shadow-lg p-4">
+      {currentLocation ? (
+        <Map
+          google={props.google}
+          zoom={13}
+          center={{
+            lat: currentLocation.coords.latitude,
+            lng: currentLocation.coords.longitude,
+          }}
+          className="w-full h-full"
+        >
+          <Marker
+            position={{
+              lat: currentLocation.coords.latitude,
+              lng: currentLocation.coords.longitude,
+            }}
+          />
+        </Map>
+      ) : (
+        <p>Loading current location...</p>
+      )}
+    </div>
+  );
+};
+
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyAmN-pywUQGw-Lpn-uSKm0bo4YCNeGzYLU&v=weekly&channel=2&libraries=places',
+})(CurrentMap);
