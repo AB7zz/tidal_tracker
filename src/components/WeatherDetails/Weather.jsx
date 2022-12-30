@@ -11,6 +11,7 @@ import WbTwilightIcon from '@mui/icons-material/WbTwilight';
 import { Context } from '../AppContext/AppContext';
 const Weather = () => {
   const [details, setDetails] = React.useState([])
+  const [hour, setHour] = React.useState()
   const is_safe = (data) => {
     let safety = 10
     if(data['data']['cloudcover'] > 6){
@@ -63,10 +64,11 @@ const Weather = () => {
   }
 
   function set_timezone(time, data){
-    let zone = ((time / 3) + 1)*3
+    let zone = (Math.round(time / 3) + 1)*3
     const jsonObject = {
       data: []
     }
+    console.log(zone)
     
     for(let i=0; i<64; i++){
       if((zone === data['dataseries'][i]['timepoint']) === true){
@@ -186,7 +188,40 @@ const Weather = () => {
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
+  let futureSafe = "NIL"
+  let res2
+  const printFuture = (hour) => {
+    getLatLong()
+    let lat = latitude
+    let long = longitude
+    fetch(`https://www.7timer.info/bin/api.pl?lon=${long}&lat=${lat}&product=civil&output=json`)
+    .then(response => response.json())
+    .then(data => {
 
+      let required_data
+      if(!hour){
+        required_data = set_timezone(10, data)
+      }
+      if(hour == 10){
+        required_data = set_timezone(10, data)
+      }
+      if(hour == 5){
+        required_data = set_timezone(5, data)
+      }
+      if(hour == 15){
+        required_data = set_timezone(15, data)
+      }
+      console.log(required_data)
+      res2 = is_safe(required_data)
+
+      if(res2){
+        futureSafe = 'Safe to Go'
+      }else{
+        futureSafe = 'Not Safe'
+      }
+      console.log(futureSafe)
+    })
+  }
   today = dd + '/' + mm + '/' + yyyy;
   return (
     <>
@@ -232,7 +267,8 @@ const Weather = () => {
               select
               label="Select"
               defaultValue="EUR"
-              helperText="Please select your currency"
+              helperText="Please select the hour"
+              onChange={e => {setHour(e.target.value), printFuture(hour)}}
             >
               {currencies.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -240,8 +276,8 @@ const Weather = () => {
                 </MenuItem>
               ))}
             </TextField>
+            {futureSafe != "NIL" && <Typography className='text-2xl text-center text-bold mb-20'>{futureSafe}</Typography>}
           </CardContent>
-          
         </Card>
       </div>
     </>
