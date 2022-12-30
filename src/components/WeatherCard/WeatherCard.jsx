@@ -2,6 +2,7 @@ import React from 'react';
 
 function WeatherCard(props) {
   const { temperature, description, icon, location, date, precipitation, humidity, wind, predicted } = props;
+  console.log(predicted)
 
   return (
     <div className="weather-card">
@@ -16,7 +17,7 @@ function WeatherCard(props) {
       <div className="precipitation">Precipitation: {precipitation}</div>
       <div className="humidity">Humidity: {humidity}</div>
       <div className="wind">Wind: {wind}</div>
-      <div className="predicted">Predicted Weather: {predicted}</div>
+      <div className="predicted">Status: {predicted}</div>
       </div>
       </div>
     </div>

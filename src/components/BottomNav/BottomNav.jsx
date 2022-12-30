@@ -4,8 +4,8 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
 import HomeIcon from '@mui/icons-material/Home';
 import SailingIcon from '@mui/icons-material/Sailing';
-import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import ChatIcon from '@mui/icons-material/Chat';
+import ExploreIcon from '@mui/icons-material/Explore';
 
 import { Link } from 'react-router-dom';
 
@@ -17,15 +17,15 @@ export default function BottomNav() {
     };
 
     return (
-        <BottomNavigation className='bg-blue-500 h-20' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center' }} value={value} onChange={handleChange}>
-            <Link to='/'>
+        <BottomNavigation className='bg-blue-500 h-15' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center' }} value={value} onChange={handleChange}>
+            <Link to='/home'>
                 <BottomNavigationAction
                     label="Home"
                     value="home"
                     icon={<HomeIcon style={{color: 'white', transform: 'scale(1.5)'}} />}
                 />
             </Link>
-            <Link to='/page2'>
+            <Link to='/currLoc'>
                 <BottomNavigationAction
                     label="Sail"
                     value="sail"
@@ -39,11 +39,11 @@ export default function BottomNav() {
                     icon={<ChatIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
-            <Link to='page4'>
+            <Link to='/compass'>
                 <BottomNavigationAction
                     label="AR"
                     value="ar"
-                    icon={<ViewInArIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                    icon={<ExploreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
         </BottomNavigation>

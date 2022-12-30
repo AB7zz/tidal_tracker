@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .Weatherbox {
     border: 1.5px solid #ccc;
     border-radius: 15px;
@@ -56,3 +57,54 @@ background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+
     color: black;
     font-size: small;
 } 
+
+.compassed {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #acb6e5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-left: 50px;
+    text-align: center;
+  }
+  
+  .compass-arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 60px solid red;
+    transform-origin: 50% 50%;
+    position: absolute;
+	left: 40%; top: 40%;
+	margin-left: -5px; margin-top: -5px;
+  }
+  
+  .compass-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .compassDirections {
+    text-align: center;
+    border: 1.5px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+    padding-top: 40px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: larger;
+    font-weight: bolder;
+    background: #0052D4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-size: cover; 
+  }

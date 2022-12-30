@@ -9,7 +9,7 @@ const Index = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setPreloader(false)
-    }, 3000)
+    }, 4000)
   }, [])
     return(
       <>

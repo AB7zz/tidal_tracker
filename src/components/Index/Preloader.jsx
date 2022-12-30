@@ -5,7 +5,7 @@ import TopNav from '../TopNavbar/TopNav';
 function Preloader(){
   return (
     <>
-      <TopNav/>
+      {/* <TopNav/> */}
       <img className='h-auto' src={wallpaper} alt="wallpaper" />
     </>
   );
