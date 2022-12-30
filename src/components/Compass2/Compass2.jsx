@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Context } from '../AppContext/AppContext';
-
+import EmergencyContacts from '../EmergencyContacts/EmergencyContacts';
 
 
 let bearing=0
@@ -88,14 +88,17 @@ function toRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
 return (
-  <div className='compassDirections'>
-    <p>Direction to given coordinate: {direction}</p>
-    <br></br>
-    <div className="compassed">
-    <div className="compass-arrow" style={{ transform: `rotate(${bearing}deg)` }} />
-    {/* <div className="compass-label">{direction}</div> */}
+  <>
+    <div className='compassDirections'>
+      <p>Direction to given coordinate: {direction}</p>
+      <br></br>
+      <div className="compassed">
+      <div className="compass-arrow" style={{ transform: `rotate(${bearing}deg)` }} />
+      {/* <div className="compass-label">{direction}</div> */}
+      </div>
     </div>
-  </div>
+    <EmergencyContacts/>
+  </>
 
 );
 

@@ -20,7 +20,7 @@ const Compass = (props) => {
 
   const triangleCoords = [
     {lat: latitude, lng: longitude},
-    {lat: liveLat+0.5, lng: liveLong-5}
+    {lat: liveLat, lng: liveLong}
   ];
 
   return (
@@ -51,7 +51,7 @@ const Compass = (props) => {
           <Marker
             position={{
               lat: liveLat,
-              lng: liveLong-5,
+              lng: liveLong,
             }}
             icon={{
               url: 'src/components/Compass/boat.png',

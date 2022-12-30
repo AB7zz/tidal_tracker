@@ -1,9 +1,8 @@
 import React from 'react'
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
 import { getFirestore } from "firebase/firestore";
-
+// import { getAuth } from "firebase/auth";
 
 export const Context = React.createContext()
 
@@ -35,7 +34,15 @@ const AppContext = ({children}) => {
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        // const auth = getAuth();
+        // auth.languageCode = 'it';
+        // window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+        //     'size': 'invisible',
+        //     'callback': (response) => {
+        //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+        //       onSignInSubmit();
+        //     }
+        // }, auth);
 
         setDB(getDatabase(app))
         setDB2(getFirestore(app))

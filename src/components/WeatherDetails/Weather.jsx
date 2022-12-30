@@ -1,6 +1,6 @@
 import React from 'react'
 import TopNav from '../TopNavbar/TopNav'
-import { Card, Typography, CardContent } from '@mui/material'
+import { Card, Typography, CardContent, TextField, MenuItem } from '@mui/material'
 import { Link } from 'react-router-dom'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
@@ -80,6 +80,20 @@ const Weather = () => {
 
   const {latitude, longitude, getLatLong} = React.useContext(Context)
   let safe
+  const currencies = [
+    {
+      value: '5',
+      label: '5',
+    },
+    {
+      value: '10',
+      label: '10',
+    },
+    {
+      value: '15',
+      label: '15',
+    }
+  ];
   const callAPI = () => {
     getLatLong()
     let lat = latitude
@@ -210,7 +224,24 @@ const Weather = () => {
                 <span>18:03</span>  
               </div>
             </Typography>
+            <Typography className='text-center text-2xl'>
+              Check if it's safe to go in the next few hours
+            </Typography>
+            <TextField
+              id="outlined-select-currency"
+              select
+              label="Select"
+              defaultValue="EUR"
+              helperText="Please select your currency"
+            >
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </CardContent>
+          
         </Card>
       </div>
     </>

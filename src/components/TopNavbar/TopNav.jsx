@@ -14,7 +14,7 @@ import face from './face.jpg'
 import { Link } from 'react-router-dom';
 import { Context } from '../AppContext/AppContext';
 
-const settings = ['Profile', 'Logout'];
+const settings = ['Profile', 'Guidelines', 'Logout'];
 
 const TopNav = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);

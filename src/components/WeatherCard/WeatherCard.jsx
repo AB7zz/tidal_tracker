@@ -2,7 +2,6 @@ import React from 'react';
 
 function WeatherCard(props) {
   const { temperature, description, icon, location, date, precipitation, humidity, wind, predicted } = props;
-  console.log(predicted)
 
   return (
     <div className="weather-card">

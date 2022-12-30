@@ -7,6 +7,7 @@ import { Context } from '../AppContext/AppContext';
 
 function Home(){
   const [details, setDetails] = React.useState([])
+  let safe
   const is_safe = (data) => {
     let safety = 10
     if(data['data']['cloudcover'] > 6){
@@ -75,7 +76,6 @@ function Home(){
   }
 
   const {latitude, longitude, getLatLong} = React.useContext(Context)
-  let safe = 'Safe to go'
   const callAPI = () => {
     getLatLong()
     let lat = latitude
@@ -85,7 +85,6 @@ function Home(){
     .then(data => {
       let required_data = set_timezone(0, data)
       let windSpeed, precDetail
-      console.log(required_data.data)
       if(required_data.data['wind10m']['speed'] == 1){
         windSpeed = '0.3m/s'
       }
@@ -142,8 +141,8 @@ function Home(){
         precDetail = '80.6mm/hr'
       }
 
-
-      if(is_safe(required_data)){
+      const res = is_safe(required_data)
+      if(res){
         safe = 'Safe to go'
       }else{
         safe = 'Not safe to go'
@@ -154,7 +153,8 @@ function Home(){
         desc: required_data.data['weather'],
         wind: windSpeed,
         prec: precDetail,
-        hum: required_data.data['rh2m']
+        hum: required_data.data['rh2m'],
+        safe: safe
       })
 
     
@@ -167,6 +167,7 @@ function Home(){
 
   React.useEffect(() => {
     callAPI()
+    safe = "NIL"
   }, [])
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -180,7 +181,8 @@ function Home(){
       <TopNav/>
       <div className="Weatherbox">
         <Link to='/weatherDetails'>
-          {details && <WeatherCard temperature={details.temp} description={details.desc} icon="03d" location="Vadanapally, Thrissur" date={today} wind={details.wind} precipitation={details.prec} humidity={details.hum} predicted={safe}/>}
+          {safe === "NIL" && console.log(safe)}
+          {details && safe!=="NIL" && <WeatherCard temperature={details.temp} description={details.desc} icon="03d" location="Vadanapally, Thrissur" date={today} wind={details.wind} precipitation={details.prec} humidity={details.hum} predicted={details.safe}/>}
         </Link>
       </div>
       <LocationBox></LocationBox>
