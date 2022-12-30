@@ -79,7 +79,7 @@ return (
   <div className='compassDirections bg-blue-500' >
     <p className='text-white'>Direction to given coordinate: {direction}</p>
     <br></br>
-    <div className="compassed">
+    <div className="compassed">.
     <div className="compass-arrow" style={{ transform: `rotate(${bearing}deg)` }} />
     {/* <div className="compass-label">{direction}</div> */}
     </div>
