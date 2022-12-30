@@ -19,11 +19,12 @@ export default function BottomNav() {
 
     return (
         <BottomNavigation className='bg-blue-500 h-15' sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center' }} value={value} onChange={handleChange}>
-            <Link to='/home'>
+           
+            <Link to='/marketplace'>
                 <BottomNavigationAction
-                    label="Home"
-                    value="home"
-                    icon={<HomeIcon style={{color: 'white', transform: 'scale(1.5)'}} />}
+                    label="Marketplace"
+                    value="Marketplace"
+                    icon={<LocalGroceryStoreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
             <Link to='/currLoc'>
@@ -33,6 +34,13 @@ export default function BottomNav() {
                     icon={<SailingIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
+            <Link to='/home'>
+                <BottomNavigationAction
+                    label="Home"
+                    value="home"
+                    icon={<HomeIcon style={{color: 'white', transform: 'scale(1.5)'}} />}
+                />
+            </Link>
             <Link to='/chat'>
                 <BottomNavigationAction
                     label="Chat"
@@ -40,13 +48,7 @@ export default function BottomNav() {
                     icon={<ChatIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
-            <Link to='/marketplace'>
-                <BottomNavigationAction
-                    label="Marketplace"
-                    value="Marketplace"
-                    icon={<LocalGroceryStoreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
-                />
-            </Link>
+            
             <Link to='/compass'>
                 <BottomNavigationAction
                     label="Compass"

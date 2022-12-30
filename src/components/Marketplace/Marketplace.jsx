@@ -1,5 +1,5 @@
 import React from 'react'
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { collection, getDocs } from "firebase/firestore"; 
 import { Context } from '../AppContext/AppContext';
 import TopNav from '../TopNavbar/TopNav'
 import { Link } from 'react-router-dom';
@@ -25,19 +25,7 @@ const Marketplace = () => {
     React.useEffect(() => {
         initFirebase()
     }, [])
-    const insert = async() => {
-        try {
-            const docRef = await addDoc(collection(db2, "marketplace"), {
-              title: "lollo",
-              price: "1,000 INR",
-              user: "Abhinav CV",
-              image: "lol.jpg"
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
-    }
+    
 
     const display = async() => {
         try{
@@ -57,6 +45,7 @@ const Marketplace = () => {
     }
     // insert()
     React.useEffect(() => {
+        setTheDoc([])
         display()
         console.log(docs)
     }, [])
@@ -65,14 +54,16 @@ const Marketplace = () => {
             <TopNav/>
             <h2 className='text-4xl mb-4 text-center font-bold'>Marketplace</h2>
             <Link to='/upload' className='ml-40 mb-4 bg-blue-400 p-1 rounded text-white'>Upload</Link>
-            {docs && console.log(docs)}
-            {docs && docs.map((data) => {
-                <EachProduct name={data.title} price={data.price} owner={data.user} imageUrl="http://www.outdeck.com/images/BIC-Boats/With-Logo/310-02-fibre-fishing-boat-price.jpg" />  
-            })
-            }
+            {/* {docs && console.log(docs)}
+        
             <EachProduct name="Fibre Boat" price={50} owner="Harshed" imageUrl="http://www.outdeck.com/images/BIC-Boats/With-Logo/310-02-fibre-fishing-boat-price.jpg" />
             <EachProduct name="Net" price={75} owner="Sameer" imageUrl="https://images.unsplash.com/photo-1538904029080-68e0f3167224?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmlzaGluZyUyMG5ldHxlbnwwfHwwfHw%3D&w=1000&q=80" /> 
-            <EachProduct name="Net" price={75} owner="Sameer" imageUrl="https://images.unsplash.com/photo-1538904029080-68e0f3167224?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmlzaGluZyUyMG5ldHxlbnwwfHwwfHw%3D&w=1000&q=80" />
+            <EachProduct name="Net" price={75} owner="Sameer" imageUrl="https://images.unsplash.com/photo-1538904029080-68e0f3167224?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmlzaGluZyUyMG5ldHxlbnwwfHwwfHw%3D&w=1000&q=80" /> */}
+
+            {docs && docs.map((data) => (
+                <EachProduct name={data.title} price={data.price} owner={data.user} imageUrl="http://www.outdeck.com/images/BIC-Boats/With-Logo/310-02-fibre-fishing-boat-price.jpg" />  
+            ))
+            }
         </div>
     )
 }
