@@ -13,7 +13,7 @@ const Login = () => {
   const loggedIn = () => {
     setLogin(true)
     navigate('/home')
-    localStorage.setItem('login', true)
+    localStorage.setItem('login', 1)
   }
   const sendOTP = () => {
     setOTP(true)
@@ -25,7 +25,7 @@ const Login = () => {
         <div style={{marginLeft: '130px'}}>
             {otp ? 
             <>
-                <TextField id="standard-basic" label="OTP" variant="standard" value="" />
+                <TextField id="outlined-number" label="OTP" type="number" variant="standard"/>
                 <NavigateNextIcon type='submit' onClick={loggedIn} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
             </>
             : 

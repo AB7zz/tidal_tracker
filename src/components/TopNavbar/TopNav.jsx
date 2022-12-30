@@ -56,7 +56,7 @@ const TopNav = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  {localStorage.getItem('login') ? <Avatar alt="Remy Sharp" src={face} /> : <Link to='/login' className='bg-green-500 p-1 text-white rounded'>Login</Link>}
+                  {localStorage.getItem('login')==1 ? <Avatar alt="Remy Sharp" src={face} /> : <Link to='/login' className='bg-green-500 p-1 text-white rounded'>Login</Link>}
                 </IconButton>
               </Tooltip>
               <Menu
