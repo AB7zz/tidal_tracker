@@ -76,7 +76,7 @@ function toRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
 return (
-  <div className='compassDirections'>
+  <div className='compassDirections bg-blue-500' >
     <p>Direction to given coordinate: {direction}</p>
     <br></br>
     <div className="compassed">
