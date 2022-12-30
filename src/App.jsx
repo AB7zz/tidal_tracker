@@ -9,6 +9,7 @@ import Sellproduct from './components/Sellproduct/Sellproduct'
 import BottomNav from './components/BottomNav/BottomNav'
 import DirectionPage from './components/DirectionPage/DirectionPage'
 import Marketplace from './components/Marketplace/Marketplace'
+import SafetyPage from './components/SafetyPage/SafetyPage'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/page6' element={<Page6/>} />
         <Route path='/Marketplace' element={<Marketplace/>} />
         <Route path='/Sellproduct' element={<Sellproduct/>} />
+        <Route path='/SafetyPage' element={<SafetyPage/>} />
         <Route path='/DirectionPage' element={<DirectionPage/>} />
       </Routes>
       <BottomNav/>
