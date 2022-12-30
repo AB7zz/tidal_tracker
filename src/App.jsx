@@ -11,6 +11,7 @@ import DirectionPage from './components/DirectionPage/DirectionPage'
 import Marketplace from './components/Marketplace/Marketplace'
 import SafetyPage from './components/SafetyPage/SafetyPage'
 import Game from './components/Game/Game'
+import Game2 from './components/Game2/Game2'
 function App() {
 
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path='/Sellproduct' element={<Sellproduct/>} />
         <Route path='/SafetyPage' element={<SafetyPage/>} />
         <Route path='/Game' element={<Game/>} />
+        <Route path='/Game2' element={<Game2/>} />
+        
         <Route path='/DirectionPage' element={<DirectionPage/>} />
       </Routes>
       <BottomNav/>
