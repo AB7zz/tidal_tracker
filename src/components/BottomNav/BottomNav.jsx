@@ -8,6 +8,7 @@ import RadarIcon from '@mui/icons-material/Radar';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import ExploreIcon from '@mui/icons-material/Explore';
 import { Link } from 'react-router-dom';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
 export default function BottomNav() {
     const [value, setValue] = React.useState('recents');
@@ -44,6 +45,13 @@ export default function BottomNav() {
                     label="Compass"
                     value="compass"
                     icon={<ExploreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                />
+            </Link>
+            <Link to='MarketPlace'>
+                <BottomNavigationAction
+                    label="Market"
+                    value="market"
+                    icon={<StorefrontIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
         </BottomNavigation>

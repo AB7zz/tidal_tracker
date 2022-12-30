@@ -46,10 +46,8 @@ function LocationBox() {
         </div>
       </div>
       <div className="px-4 py-3 sm:px-6 sm:py-4 sm:flex sm:justify-end">
-        <a
-          href={`/Page2`} onClick={getCurrentLocation}
-          className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-800"
-        >
+        <a href={`/Page2`} onClick={getCurrentLocation}
+          className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-800">
           Start Journey
         </a>
       </div>
