@@ -5,6 +5,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import SailingIcon from '@mui/icons-material/Sailing';
 import ChatIcon from '@mui/icons-material/Chat';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import ExploreIcon from '@mui/icons-material/Explore';
 
 import { Link } from 'react-router-dom';
@@ -39,10 +40,17 @@ export default function BottomNav() {
                     icon={<ChatIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>
+            <Link to='/marketplace'>
+                <BottomNavigationAction
+                    label="Marketplace"
+                    value="Marketplace"
+                    icon={<LocalGroceryStoreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
+                />
+            </Link>
             <Link to='/compass'>
                 <BottomNavigationAction
-                    label="AR"
-                    value="ar"
+                    label="Compass"
+                    value="compass"
                     icon={<ExploreIcon style={{color: 'white', transform: 'scale(1.5)'}}/>}
                 />
             </Link>

@@ -50,7 +50,8 @@ const AppContext = ({children}) => {
         latitude,
         longitude,
         getLatLong,
-        db2
+        db2,
+        setLogin
     }}
     >
         {children}

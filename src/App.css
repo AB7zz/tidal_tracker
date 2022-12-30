@@ -108,3 +108,11 @@ background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+
 
     background-size: cover; 
   }
+  
+  .productbox {
+    border: 1.5px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }

@@ -11,6 +11,8 @@ import Compass from './components/Compass/Compass'
 import Compass2 from './components/Compass2/Compass2'
 import { Context } from './components/AppContext/AppContext'
 import Marketplace from './components/Marketplace/Marketplace'
+import SellProduct from './components/SellProduct/SellProduct'
+import Logout from './components/Logout/Logout'
 function App() {
   const {initFirebase} = React.useContext(Context)
   React.useEffect(() => {
@@ -28,6 +30,8 @@ function App() {
         <Route path='/currLoc' element={<Compass/>} />
         <Route path='/compass' element={<Compass2/>} />
         <Route path='/marketplace' element={<Marketplace/>} />
+        <Route path='/upload' element={<SellProduct/>} />
+        <Route path='/logout' element={<Logout/>} />
       </Routes>
       <BottomNav/>
     </BrowserRouter>

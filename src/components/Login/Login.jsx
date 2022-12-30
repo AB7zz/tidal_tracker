@@ -3,23 +3,37 @@ import TopNav from '../TopNavbar/TopNav'
 import wallpaper from './wallpaper.png'
 import { TextField } from '@mui/material'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { Context } from '../AppContext/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [otp, setOTP] = React.useState(false)
-  const sendOTP = () => {
-    
+  const {setLogin} = React.useContext(Context)
+  const navigate = useNavigate()
+  const loggedIn = () => {
+    setLogin(true)
+    navigate('/home')
+    localStorage.setItem('login', true)
   }
-  // sendOTP()
+  const sendOTP = () => {
+    setOTP(true)
+  }
   return (
     <>
         <TopNav/>
         <img style={{height: '450px'}} src={wallpaper} alt="" />
         <div style={{marginLeft: '130px'}}>
             {otp ? 
-                <TextField id="standard-basic" label="OTP" variant="standard" value="" /> : 
+            <>
+                <TextField id="standard-basic" label="OTP" variant="standard" value="" />
+                <NavigateNextIcon type='submit' onClick={loggedIn} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
+            </>
+            : 
+            <>
                 <TextField id="standard-basic" label="Phone" variant="standard" />
+                <NavigateNextIcon type='submit' onClick={sendOTP} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
+            </>
             }
-            <NavigateNextIcon type='submit' onClick={() => {runServer}} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
         </div>
     </>
   )

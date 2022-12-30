@@ -13,9 +13,11 @@ export const DisplayChats = ({user, message, userName}) => {
       </div>
     )
   }else{
+    return(
     <div className="flex justify-start mt-5 mb-5">
       <p className='p-2 text-white bg-orange-300 rounded w-1/3'>{message}</p>
     </div>
+    )
   }
 }
 
