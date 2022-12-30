@@ -77,7 +77,7 @@ function toRadians(degrees) {
 }
 return (
   <div className='compassDirections bg-blue-500' >
-    <p>Direction to given coordinate: {direction}</p>
+    <p className='text-white'>Direction to given coordinate: {direction}</p>
     <br></br>
     <div className="compassed">
     <div className="compass-arrow" style={{ transform: `rotate(${bearing}deg)` }} />

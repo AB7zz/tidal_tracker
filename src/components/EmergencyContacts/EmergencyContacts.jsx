@@ -15,7 +15,7 @@ const EmergencyContacts = () => {
       <h1 className="text-2xl text-black">Emergency Contacts</h1>
       <ul className="list-disc list-inside">
         {contacts.map(contact => (
-          <li className="bg-green-400 m-4 text-black" key={contact.name}>
+          <li className="bg-green-400 m-4 text-black rounded-lg" key={contact.name}>
             <span className="font-bold">Name:</span> {contact.name}<br />
             <span className="font-bold">Designation:</span> {contact.designation}<br />
             <span className="font-bold">Number:</span> {contact.number}
