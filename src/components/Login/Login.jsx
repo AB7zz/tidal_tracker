@@ -5,7 +5,11 @@ import { TextField } from '@mui/material'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Login = () => {
-    const [otp, setOTP] = React.useState(false)
+  const [otp, setOTP] = React.useState(false)
+  const sendOTP = () => {
+    
+  }
+  // sendOTP()
   return (
     <>
         <TopNav/>
@@ -15,7 +19,7 @@ const Login = () => {
                 <TextField id="standard-basic" label="OTP" variant="standard" value="" /> : 
                 <TextField id="standard-basic" label="Phone" variant="standard" />
             }
-            <NavigateNextIcon onClick={() => {setOTP(true)}} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
+            <NavigateNextIcon type='submit' onClick={() => {runServer}} className='mt-5 ml-4 bg-blue-500 rounded text-white' />
         </div>
     </>
   )

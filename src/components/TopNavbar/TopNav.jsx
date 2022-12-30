@@ -9,15 +9,17 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import logo from './logo.png'
 import face from './face.jpg'
 import { Link } from 'react-router-dom';
+import { Context } from '../AppContext/AppContext';
 
 const settings = ['Profile', 'Logout'];
 
 const TopNav = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const {login} = React.useContext(Context)
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -41,9 +43,9 @@ const TopNav = () => {
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
-                fontFamily: 'monospace',
+                // fontFamily: 'monospace',
                 fontWeight: 700,
-                letterSpacing: '.3rem',
+                letterSpacing: '.1rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
@@ -54,7 +56,7 @@ const TopNav = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src={face} />
+                  {login ? <Avatar alt="Remy Sharp" src={face} /> : <Link to='/login' className='bg-green-500 p-1 text-white rounded'>Login</Link>}
                 </IconButton>
               </Tooltip>
               <Menu

@@ -10,6 +10,7 @@ export const Context = React.createContext()
 const AppContext = ({children}) => {
     const [db, setDB] = React.useState()
     const [db2, setDB2] = React.useState()
+    const [login, setLogin] = React.useState(false)
     const [latitude, setLatitude] = React.useState(null);
     const [longitude, setLongitude] = React.useState(null);
     
