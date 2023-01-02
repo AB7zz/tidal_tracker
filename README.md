@@ -3,6 +3,15 @@
 
 <br>
 
+## Team Members:
+<ol>
+ <li>Abhinav C V</li>
+ <li>Harshed Abdullah</li>
+ <li>Aazim Anish</li>
+ <li>Abhinand</li>
+ <li>Sameer Abdullah</li>
+</ol>
+
 ## Solution
 <span style="font-family: sans-serif; font-size: 15px;">
 "From storms to gear rentals, 'Tidal Tracker' has you covered - the all-in-one mobile application for fishermen community facing adverse weather conditions, complete with digital compass navigation and top-quality equipment rentals."
